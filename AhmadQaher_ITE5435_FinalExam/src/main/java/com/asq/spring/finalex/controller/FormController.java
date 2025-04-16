@@ -11,6 +11,7 @@ import com.asq.spring.finalex.model.Reservation;
 import com.asq.spring.finalex.service.CustomerService;
 import com.asq.spring.finalex.service.PaymentService;
 import com.asq.spring.finalex.service.ReservationService;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class FormController {
@@ -31,6 +32,18 @@ public class FormController {
                              @RequestParam String dateOfDeparting, Model model) {
 
         Customer customer = new Customer(firstName, lastName, phoneNumber);
+        /*
+        ObjectMapper objectMapper = new ObjectMapper();
+        Customer customer = new Customer("firstName", "lastName", "phoneNumber");
+        objectMapper.writeValue(new File("target/customer.json"), customer);
+        
+         * ObjectMapper objectMapper = new ObjectMapper();
+Car car = new Car("yellow", "renault");
+objectMapper.writeValue(new File("target/car.json"), car);
+
+         */
+        
+        
         customerService.addCustomer(customer);
 
         Reservation reservation = new Reservation(firstName, lastName, numberOfPassengers, classType, phoneNumber, time, dateOfDeparting);
