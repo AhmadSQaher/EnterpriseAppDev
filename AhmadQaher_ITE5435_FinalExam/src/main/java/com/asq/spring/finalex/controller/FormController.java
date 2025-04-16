@@ -38,8 +38,8 @@ public class FormController {
         objectMapper.writeValue(new File("target/customer.json"), customer);
         
          * ObjectMapper objectMapper = new ObjectMapper();
-Car car = new Car("yellow", "renault");
-objectMapper.writeValue(new File("target/car.json"), car);
+			Car car = new Car("yellow", "renault");
+			objectMapper.writeValue(new File("target/car.json"), car);
 
          */
         
